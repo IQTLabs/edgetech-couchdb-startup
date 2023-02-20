@@ -34,7 +34,7 @@
 <h1 align="center">EdgeTech-CouchDB-Startup</h1>
 
   <p align="center">
-    This repo builds upon the <a href="https://www.apache.org">Apache Foundation's</a> <a href="https://couchdb.apache.org">CouchDB</a> database to inflate and intalize a CouchDB database and setup a connection with the external, cloud hosted database to sync with. All of this functionality is wrapped in a Docker containers (natively through the <a href="https://hub.docker.com/_/couchdb">CouchDB Docker Image</a> on Docker Hub) for cross-platform compatability. 
+    This repo builds upon the <a href="https://www.apache.org">Apache Foundation's</a> <a href="https://couchdb.apache.org">CouchDB</a> database to inflate and intalize a CouchDB database and setup a connection with the external, cloud hosted database to sync with. All of this functionality is wrapped in a Docker container (natively through the <a href="https://hub.docker.com/_/couchdb">CouchDB Docker Image</a> on Docker Hub) for cross-platform compatability. 
     <br/>
     <br/>
     <a href="https://github.com/IQTLabs/edgetech-couchdb-startup/pulls">Make Contribution</a>
