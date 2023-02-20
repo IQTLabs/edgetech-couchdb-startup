@@ -1,0 +1,31 @@
+version: '3'
+services:
+  couchdb-server:
+    image: couchdb:3.1.1
+    restart: unless-stopped
+    ports:
+      - "5984:5984"
+    volumes:
+        - /home/mobian/couchdb-data:/opt/couchdb/data
+    env_file:
+      - .env
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10M"
+        max-file: "10"
+  couchdb-startup:
+    image: iqtlabs/edgetech-couchdb-startup:latest
+    build:
+      context: ./couchdb-startup
+      dockerfile: ./Dockerfile
+    restart: "no"
+    env_file:
+      - .env
+    depends_on:
+      - couchdb-server
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10M"
+        max-file: "10"
