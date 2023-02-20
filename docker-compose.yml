@@ -19,7 +19,7 @@ services:
     build:
       context: ./couchdb-startup
       dockerfile: ./Dockerfile
-    restart: "no"
+    restart: "unless-stopped"
     env_file:
       - .env
     depends_on:

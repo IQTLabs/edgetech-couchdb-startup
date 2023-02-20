@@ -34,7 +34,7 @@
 <h1 align="center">EdgeTech-CouchDB-Startup</h1>
 
   <p align="center">
-    This repo builds upon the <a href="https://www.apache.org">Apache Foundation's</a> <a href="https://couchdb.apache.org">CouchDB</a> database to inflate and intalize a CouchDB database and setup a connection with the external, cloud hosted database to sync with. All of this functionality is wrapped in a Docker containers (natively through the <a href="https://hub.docker.com/_/couchdb">CouchDB Docker Image</a> on Docker Hub) for cross-platform compatability. 
+    This repo builds upon the <a href="https://www.apache.org">Apache Foundation's</a> <a href="https://couchdb.apache.org">CouchDB</a> database to inflate and initialize a CouchDB database and setup a connection with the external, cloud hosted database to sync with. All of this functionality is wrapped in a Docker containers (natively through the <a href="https://hub.docker.com/_/couchdb">CouchDB Docker Image</a> on Docker Hub) for cross-platform compatibility. 
     <br/>
     <br/>
     <a href="https://github.com/IQTLabs/edgetech-couchdb-startup/pulls">Make Contribution</a>
@@ -67,9 +67,9 @@ Running this repo requires that you have [Docker](https://www.docker.com) instal
 
 ## Usage
 
-You can find an example of the startup workflow in this repository's `docker-compose.yml` which starts up a CouchDB server and a sync initalization container. Additionally, some editing of relevant enviornment variables will be required based upon your system's configuration of topics to subscribe to and CouchDB configuration. Examples of these enviornment variables can be found in this repository's `.env` file. 
+You can find an example of the startup workflow in this repository's `docker-compose.yml` which starts up a CouchDB server and a sync initialization container. Additionally, some editing of relevant environment variables will be required based upon your system's configuration of topics to subscribe to and CouchDB configuration. Examples of these environment variables can be found in this repository's `.env` file. 
 
-As this system is meant to be spun up with an MQTT server, copying the CouchDB `docker-compose` statements into a master `docker-compose.yml` and  `.env` files with your entire system of containers is the preferred workflow. Find an application architecture diagram example of how the usage of this module was envisioned below.
+Copying the CouchDB `docker-compose` statements into a master `docker-compose.yml` and  `.env` files with your entire system of containers is the preferred workflow. Find an application architecture diagram example of how the usage of this module was envisioned below.
 
 ```mermaid 
 
@@ -114,7 +114,7 @@ Distributed under the [Apache 2.0](https://github.com/IQTLabs/edgetech-couchdb-s
 
 ## Contact IQTLabs
 
-  - Twtiter: [@iqtlabs](https://twitter.com/iqtlabs)
+  - Twitter: [@iqtlabs](https://twitter.com/iqtlabs)
   - Email: info@iqtlabs.org
 
 See our other projects: [https://github.com/IQTLabs/](https://github.com/IQTLabs/)
