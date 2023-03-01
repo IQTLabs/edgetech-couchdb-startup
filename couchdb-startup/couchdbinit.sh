@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Wait for the CouchDB instance container to be ready before executing setup commands
-while ["$(curl -s -o /dev/null -w ''%{http_code}'' couchdb-server:5984)" != "200" ]; do sleep 5; done
+while [ "$(curl -s -o /dev/null -w ''%{http_code}'' couchdb-server:5984)" != "200" ]; do sleep 5; done
 
 # Create system tables and table "aisonobuoy" which is used for synching all data from devices
 curl -X PUT http://${COUCHDB_USER}:${COUCHDB_PASSWORD}@couchdb-server:5984/_users
