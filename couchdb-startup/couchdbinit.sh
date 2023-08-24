@@ -7,7 +7,7 @@ while [ "$(curl -s -o /dev/null -w ''%{http_code}'' couchdb-server:5984)" != "20
 curl -X PUT http://${COUCHDB_USER}:${COUCHDB_PASSWORD}@couchdb-server:5984/_users
 curl -X PUT http://${COUCHDB_USER}:${COUCHDB_PASSWORD}@couchdb-server:5984/_replicator
 curl -X PUT http://${COUCHDB_USER}:${COUCHDB_PASSWORD}@couchdb-server:5984/_global_changes
-curl -X PUT http://${COUCHDB_USER}:${COUCHDB_PASSWORD}@couchdb-server:5984/aisonobuoy
+curl -X PUT http://${COUCHDB_USER}:${COUCHDB_PASSWORD}@couchdb-server:5984/${COUCHDB_DATABASE_NAME}
 curl -X GET http://${COUCHDB_USER}:${COUCHDB_PASSWORD}@couchdb-server:5984/_all_dbs
 
 # In case the container is being on a mobile device,
@@ -15,6 +15,6 @@ curl -X GET http://${COUCHDB_USER}:${COUCHDB_PASSWORD}@couchdb-server:5984/_all_
 
 if ${PERIPHERAL}; then
 
-    curl -X POST http://${COUCHDB_USER}:${COUCHDB_PASSWORD}@couchdb-server:5984/_replicator -d '{"source":"http://'${COUCHDB_USER}':'${COUCHDB_PASSWORD}'@couchdb-server:5984/aisonobuoy", "target":"http://'${COUCHDB_USER}':'${COUCHDB_PASSWORD}'@'${COUCHDB_SERVER_IP_ADDR}':5984/aisonobuoy", "continuous":true}' -H "Content-Type: application/json"
+    curl -X POST http://${COUCHDB_USER}:${COUCHDB_PASSWORD}@couchdb-server:5984/_replicator -d '{"source":"http://'${COUCHDB_USER}':'${COUCHDB_PASSWORD}'@couchdb-server:5984/'${COUCHDB_DATABASE_NAME}'", "target":"http://'${COUCHDB_USER}':'${COUCHDB_PASSWORD}'@'${COUCHDB_SERVER_IP_ADDR}':5984/'${COUCHDB_DATABASE_NAME}'", "continuous":true}' -H "Content-Type: application/json"
 
 fi
