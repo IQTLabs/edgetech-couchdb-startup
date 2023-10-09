@@ -20,12 +20,12 @@ services:
       context: ./couchdb-startup
       dockerfile: ./Dockerfile
     restart: "unless-stopped"
-    env_file:
-      - .env
-    depends_on:
-      - couchdb-server
     logging:
       driver: "json-file"
       options:
         max-size: "10M"
         max-file: "10"
+    depends_on:
+      - couchdb-server
+    env_file:
+      - .env
