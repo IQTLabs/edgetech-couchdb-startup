@@ -4,6 +4,7 @@
 while [ "$(curl -s -o /dev/null -w ''%{http_code}'' couchdb-server:5984)" != "200" ]; do sleep 5; done
 
 # Create system tables and table "aisonobuoy" which is used for synching all data from devices
+# TODO: Do not hardcode CouchDB server IP?
 curl -X PUT http://${COUCHDB_USER}:${COUCHDB_PASSWORD}@couchdb-server:5984/_users
 curl -X PUT http://${COUCHDB_USER}:${COUCHDB_PASSWORD}@couchdb-server:5984/_replicator
 curl -X PUT http://${COUCHDB_USER}:${COUCHDB_PASSWORD}@couchdb-server:5984/_global_changes
