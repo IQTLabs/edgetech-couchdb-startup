@@ -1,14 +1,14 @@
 version: '3'
 services:
   couchdb-server:
-    image: couchdb:3.1.1
+    image: couchdb:3.3.3
     restart: unless-stopped
     ports:
       - "5984:5984"
     volumes:
-        - /home/mobian/couchdb-data:/opt/couchdb/data
+        - /home/ubuntu/couchdb-data:/opt/couchdb/data
     env_file:
-      - .env
+      - couchdb-startup.env
     logging:
       driver: "json-file"
       options:
