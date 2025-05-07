@@ -1,7 +1,7 @@
 version: '3'
 services:
   couchdb-server:
-    image: couchdb:3.3.3
+    image: couchdb:3.5.0
     restart: unless-stopped
     ports:
       - "5984:5984"
